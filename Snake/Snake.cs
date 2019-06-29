@@ -28,6 +28,8 @@ namespace Snake {
         public void IncreaseSnake() {
             int[,] newSnake = new int[snake.GetLength(0) + 1, 2];
             Array.Copy(snake, newSnake, snake.GetLength(0));
+            newSnake[newSnake.GetLength(0)-1, 0] = this.GetPosX(snake.GetLength(0)-1);
+            newSnake[newSnake.GetLength(0)-1, 1] = this.GetPosY(snake.GetLength(0)-1);
             snake = newSnake;
         }
     }

@@ -32,8 +32,10 @@ namespace Snake {
             Graphics graphics = e.Graphics;
 
             for (int i = 0; i < snake.SnakeLength(); i++) {
-                graphics.DrawEllipse(myPen, snake.GetPosX(i) - radius, snake.GetPosY(i) - radius, radius + radius, radius + radius);
-                graphics.FillEllipse(myBrush, snake.GetPosX(i) - radius, snake.GetPosY(i) - radius, radius + radius, radius + radius);
+                if (snake.GetPosY(i) != 0) {
+                    graphics.DrawEllipse(myPen, snake.GetPosX(i) - radius, snake.GetPosY(i) - radius, radius + radius, radius + radius);
+                    graphics.FillEllipse(myBrush, snake.GetPosX(i) - radius, snake.GetPosY(i) - radius, radius + radius, radius + radius);
+                }
             }
 
             myPen = new Pen(Color.Red, 5);
